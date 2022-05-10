@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = [{
   id: 998,
-  sender: 0x00000000,
-  content: "First fixture message"
+  sender: "0xb9EC356788632ea5f73ebb7017e4603EC28A62Eb",
+  content: "Welcome to the internet!"
 },
 {
   id: 999,
-  sender: 0x00000001,
-  content: "Second fixture message"
+  sender: "0xa3B87797420fc6b9619FbF4A92dbCC720E9b0ede",
+  content: "This message is here forever"
 }]
 
 const speechSlice = createSlice({

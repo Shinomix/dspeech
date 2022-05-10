@@ -21,3 +21,12 @@
   border: 1px solid #35c2c2;
   box-shadow: 1px 1px #35c2c2;
 }
+
+.Speech-sender {
+  margin-bottom: 8px;
+}
+
+.Speech-sender a {
+  color: black;
+  font-weight: bold;
+}
