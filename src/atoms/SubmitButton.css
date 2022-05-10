@@ -1,0 +1,26 @@
+.SubmitButton {
+  padding: 10px 30px;
+  border-radius: 0;
+  border: 1px solid #c45675;
+  box-shadow: inset 1px 1px #efb2c3;
+  background-color: #f06c91;
+
+  color: white;
+  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.SubmitButton:hover {
+  background-color: #c45675;
+}
+
+.SubmitButton:active {
+  box-shadow: inset 0px 0px 0px 1px #f06c91;
+  background-color: #9b425b;
+}
+
+.SubmitButton:disabled {
+  box-shadow: inset 1px 1px #eee;
+  background-color: #ccc;
+  border: 1px solid #888;
+}

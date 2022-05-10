@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*.ts"],
+  "compilerOptions": {
+    "paths": {
+      "*": ["./src/*"]
+    },
+    "target": "esnext",
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": true,
+    "alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
+  },
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,23 @@
+.Speech {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+
+  border: 1px solid black;
+
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.Speech:nth-child(2n+1) {
+  background-color: #fcf1c0;
+  border: 1px solid #ccae28;
+  box-shadow: 1px 1px #ccae28;
+}
+
+.Speech:nth-child(2n) {
+  background-color: #daf5f5;
+  border: 1px solid #35c2c2;
+  box-shadow: 1px 1px #35c2c2;
+}

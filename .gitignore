@@ -10,7 +10,10 @@
 !.yarn/cache
 #.pnp.*
 
+
 node_modules
+/.pnp
+.pnp.js
 .env
 coverage
 coverage.json
@@ -19,3 +22,9 @@ typechain
 # Hardhat files
 cache
 artifacts
+
+# production
+/build
+
+# test
+/coverage

@@ -1,0 +1,10 @@
+.SpeechRecorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.SpeechRecorder .SubmitButton {
+  margin: 20px 0;
+}

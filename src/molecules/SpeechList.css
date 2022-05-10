@@ -1,0 +1,10 @@
+.SpeechList {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  align-self: center;
+}
+
+.SpeechList .Speech {
+  margin: 10px;
+}

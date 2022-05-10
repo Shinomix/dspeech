@@ -1,0 +1,11 @@
+.Input {
+  display: flex;
+  height: 100px;
+  width: 500px;
+  resize: none;
+
+  padding: 5px;
+
+  border: 1px solid #000;
+  border-radius: 5px;
+}
