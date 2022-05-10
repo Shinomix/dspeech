@@ -10,6 +10,8 @@ contract SpeechRecorder {
   Counters.Counter private _messageIds;
 
   uint constant CONTENT_MAX_LENGTH = 256;
+  uint constant PAGE_SIZE = 10;
+
   struct Speech {
     address sender;
     string content;
@@ -35,6 +37,25 @@ contract SpeechRecorder {
     emit SpeechRecorded(speech.id, speech.sender, speech.content);
 
     return speech.id;
+  }
+
+  function get(uint256 id) public view returns (Speech memory) {
+    return _speeches[id];
+  }
+
+  function getPage(uint256 startFrom) public view returns (Speech[] memory) {
+    uint256 maxIndex = _messageIds.current();
+    uint i = 0;
+
+    uint pageSize = startFrom + PAGE_SIZE > maxIndex ? maxIndex - startFrom : PAGE_SIZE;
+    Speech[] memory result = new Speech[](pageSize);
+
+    while (i < PAGE_SIZE && startFrom + i < maxIndex) {
+      result[i] = _speeches[startFrom + i + 1]; // counter starts from 1
+      i++;
+    }
+
+    return result;
   }
 
   function _setSpeech(address sender, string memory content, uint256 id) private pure returns (Speech memory s) {
