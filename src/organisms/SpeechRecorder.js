@@ -9,13 +9,17 @@ function SpeechRecorder({ inputValue, dispatch }) {
   const onInputChangeFn = (input) => dispatch(inputChanged(input));
   const onSubmitFn = () => {};
 
+  const isInputInvalid = () => inputValue.length > 256;
+  const isSubmitDisabled = () => inputValue.length === 0 || isInputInvalid();
+
   return (
     <div className="SpeechRecorder">
       <SubmitForm
         onInputChangeFn={onInputChangeFn}
         inputValue={inputValue}
         onSubmitFn={onSubmitFn}
-        isSubmitDisabled={false}
+        isSubmitDisabled={isSubmitDisabled()}
+        isInputInvalid={isInputInvalid()}
       />
     </div>
   )

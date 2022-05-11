@@ -5,11 +5,12 @@ function SubmitForm({
   onInputChangeFn,
   inputValue,
   onSubmitFn,
-  isSubmitDisabled
+  isSubmitDisabled,
+  isInputInvalid,
 }) {
   return (
     <div className="SpeechRecorder">
-      <Input onChangeFn={onInputChangeFn} value={inputValue} />
+      <Input onChangeFn={onInputChangeFn} value={inputValue} isInvalid={isInputInvalid} />
       <SubmitButton content="Record" onClickFn={onSubmitFn} isDisabled={isSubmitDisabled} />
     </div>
   )

@@ -4,7 +4,7 @@ function Speech({ sender, senderUrl, content }) {
   return (
     <div className="Speech">
       <div className="Speech-sender">
-        <a href={senderUrl} target="_blank">
+        <a href={senderUrl} target="_blank" rel="noreferrer">
           {sender}
         </a>
       </div>
