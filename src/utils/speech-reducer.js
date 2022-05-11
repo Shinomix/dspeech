@@ -22,7 +22,9 @@ const speechSlice = createSlice({
   initialState,
   reducers: {
     speechAdded(state, action) {
-      state.speeches.push(action.payload)
+      if (!state.speeches.some(s => s.id === action.payload.id)) {
+        state.speeches.push(action.payload)
+      }
     }
   },
   extraReducers: (builder) => {

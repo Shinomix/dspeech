@@ -10,16 +10,22 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.Speech:nth-child(2n+1) {
+.Speech:nth-child(1n) {
+  background-color: #d9f2d0;
+  border: 1px solid #6c9f59;
+  box-shadow: 1px 1px #6c9f59;
+}
+
+.Speech:nth-child(2n) {
   background-color: #fcf1c0;
   border: 1px solid #ccae28;
   box-shadow: 1px 1px #ccae28;
 }
 
-.Speech:nth-child(2n) {
+.Speech:nth-child(3n) {
   background-color: #daf5f5;
   border: 1px solid #35c2c2;
-  box-shadow: 1px 1px #35c2c2;
+  box-shadow: 1px 1px #aef7a8;
 }
 
 .Speech-sender {
