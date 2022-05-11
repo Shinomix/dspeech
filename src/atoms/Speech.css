@@ -25,7 +25,7 @@
 .Speech:nth-child(3n) {
   background-color: #daf5f5;
   border: 1px solid #35c2c2;
-  box-shadow: 1px 1px #aef7a8;
+  box-shadow: 1px 1px #35c2c2;
 }
 
 .Speech-sender {
