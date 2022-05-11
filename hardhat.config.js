@@ -8,10 +8,11 @@ const { API_URL, PRIVATE_KEY } = process.env;
 
 module.exports = {
   solidity: "0.8.4",
-  defaultNetwork: "rinkeby",
+  defaultNetwork: "hardhat",
   networks: {
      hardhat: {
-      allowUnlimitedContractSize: true
+      allowUnlimitedContractSize: true,
+      chainId: 31337
      },
      rinkeby: {
         url: API_URL,
