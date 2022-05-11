@@ -1,14 +1,21 @@
 import { connect } from "react-redux";
-import SpeechList from "../molecules/SpeechList";
+import { useEffect } from 'react';
 
-function Speeches({ speeches }) {
+import SpeechList from "../molecules/SpeechList";
+import { fetchPage } from "../utils/speech-reducer";
+
+function Speeches({ speeches, dispatch }) {
+  useEffect(() => {
+    dispatch(fetchPage())
+  }, []);
+
   return (
     <SpeechList speeches={speeches} />
   )
 }
 
 const mapStateToProps = (state) => ({
-  speeches: state.speech
+  speeches: state.speech.speeches
 })
 
 export default connect(mapStateToProps)(Speeches)

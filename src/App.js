@@ -2,8 +2,15 @@ import './App.css';
 import Speeches from './organisms/Speeches';
 import SpeechRecorder from './organisms/SpeechRecorder';
 import logo from './logo.png';
+import { setupListeners } from './utils/web3/contract-api';
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ dispatch }) {
+  useEffect(() => {
+    setupListeners();
+  }, []);
+
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
@@ -14,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect()(App);

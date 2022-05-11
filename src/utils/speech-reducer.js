@@ -1,24 +1,44 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { getPage } from "../utils/web3/contract-api";
 
-const initialState = [{
-  id: 998,
-  sender: "0xb9EC356788632ea5f73ebb7017e4603EC28A62Eb",
-  content: "Welcome to the internet!"
-},
-{
-  id: 999,
-  sender: "0xa3B87797420fc6b9619FbF4A92dbCC720E9b0ede",
-  content: "This message is here forever"
-}]
+const initialState = {
+  speeches: []
+}
+
+export const fetchPage = createAsyncThunk(
+  'speech/fetchPage',
+  async (startFrom = 0) => {
+    const data = await getPage(startFrom);
+    const newSpeeches = data.map(s => (
+      { id: s.id, sender: s.sender, content: s.content }
+    ));
+
+    return newSpeeches;
+  },
+)
 
 const speechSlice = createSlice({
   name: 'speech',
   initialState,
   reducers: {
     speechAdded(state, action) {
-      state.push(action.payload)
-    },
+      state.speeches.push(action.payload)
+    }
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchPage.fulfilled, (state, action) => {
+        let newState = state.speeches;
+        action.payload.forEach(speech => {
+          if (!newState.find(s => s.id.eq(speech.id))) {
+            newState.push(speech);
+          }
+        })
+
+        state.speeches = newState;
+      })
   }
 })
 
+export const { speechAdded } = speechSlice.actions
 export default speechSlice.reducer
