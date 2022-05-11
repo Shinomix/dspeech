@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract SpeechRecorder {
-  event SpeechRecorded(uint256 id, address indexed speaker, string speech);
+  event SpeechRecorded(uint256 id, address indexed sender, string speech);
 
   using Counters for Counters.Counter;
   Counters.Counter private _messageIds;
